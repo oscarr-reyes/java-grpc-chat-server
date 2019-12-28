@@ -1,6 +1,8 @@
-plugins {
-    id 'java'
-}
+//plugins {
+//    id 'java'
+//}
+apply plugin: 'java'
+apply plugin: 'com.google.protobuf'
 
 group 'dev.oscar-reyes'
 version '0.1.0'
@@ -9,6 +11,16 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.11'
+    }
 }
 
 dependencies {
