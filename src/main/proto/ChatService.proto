@@ -3,10 +3,8 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
 option java_multiple_files = true;
-option java_package = "dev.oscarreyes.grpc.chat";
-option java_outer_classname = "ChatProto";
 
-package chat;
+package dev.oscarreyes.grpc;
 
 service ChatService {
     rpc chat(stream ChatMessage) returns (stream ResponseMessage);
