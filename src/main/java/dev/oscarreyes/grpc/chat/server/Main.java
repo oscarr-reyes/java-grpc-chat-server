@@ -6,14 +6,14 @@ import io.grpc.ServerBuilder;
 import java.io.IOException;
 
 public class Main {
-    private static final int PORT = 8080;
+	private static final int PORT = 8080;
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-        Server server = ServerBuilder.forPort(PORT)
-                .addService(new Service())
-                .build();
+	public static void main(String[] args) throws IOException, InterruptedException {
+		Server server = ServerBuilder.forPort(PORT)
+			.addService(new Service())
+			.build();
 
-        server.start();
-        server.awaitTermination();
-    }
+		server.start();
+		server.awaitTermination();
+	}
 }
