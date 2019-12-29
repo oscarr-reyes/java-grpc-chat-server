@@ -1,3 +1,14 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.11'
+    }
+}
+
+apply plugin: 'application'
 apply plugin: 'java'
 apply plugin: 'com.google.protobuf'
 
@@ -12,16 +23,6 @@ repositories {
     mavenCentral()
 }
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.11'
-    }
-}
-
 sourceSets {
     main {
         java {
@@ -29,6 +30,10 @@ sourceSets {
             srcDirs 'build/generated/source/proto/main/grpc'
         }
     }
+}
+
+application {
+    mainClassName = "dev.oscarreyes.grpc.chat.server.Main"
 }
 
 protobuf {
